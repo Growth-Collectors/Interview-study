@@ -3,35 +3,27 @@
 태그: java, jvm
 
 
-## *JVM이란?*
+## JVM이란?
 
-JVM은 **Java Virtual Machine**의 약자로, 자바 가상 머신이라고 부릅니다. 
-
+JVM은 **Java Virtual Machine**의 약자로, 자바 가상 머신이라고 부릅니다.
 그리고 **자바와 운영체제 사이에서 중개자 역할을 수행**하며, 자바가 운영체제에 구애 받지 않고 프로그램을 실행할 수 있도록 도와줍니다. 
-
 또한, **가비지 컬렉터**를 사용한 메모리 관리도 자동으로 수행하며, 다른 하드웨어와 다르게 레지스터 기반이 아닌 **스택 기반**으로 동작합니다.
-
 아래는 자바 프로그램의 실행 단계입니다.
 
 ![https://blog.kakaocdn.net/dn/o2kwL/btqSmzWHdHV/OeIODqCVTN97ioNDCVjiU0/img.png](https://blog.kakaocdn.net/dn/o2kwL/btqSmzWHdHV/OeIODqCVTN97ioNDCVjiU0/img.png)
 
-먼저, 자바 컴파일러에 의해 자바 소스 파일은 바이트 코드로 변환됩니다. 
-
-그리고 이러한 **바이트 코드를 JVM에서 읽어 들인 다음에, 여러 과정을 거쳐서 어떤 운영체제든 간에 프로그램을 실행할 수 있도록 만드는 것**입니다.
-
-즉, **JVM 은 자바 프로그램이 어느 기기 또는 어느 운영체제에서도 실행될 수 있게 해준다.**
-
-- 자바는 JVM이 운영체제와 프로그램 사이에서 해당 운영체제에 맞게 변환하여 전달하기 때문에 운영체제에서 자유롭다.
-- JVM 은 운영체제에 종속적이기 때문에 **운영체제에 맞는 JVM을 필요**로 한다.
+- 먼저, 자바 컴파일러에 의해 자바 소스 파일은 바이트 코드로 변환됩니다. 
+- 이러한 **바이트 코드를 JVM에서 읽어 들인 다음에, 여러 과정을 거쳐서 어떤 운영체제든 간에 프로그램을 실행할 수 있도록 만드는 것**입니다.
+    - 자바는 JVM이 운영체제와 프로그램 사이에서 해당 운영체제에 맞게 변환하여 전달하기 때문에 운영체제에서 자유롭습니다.
+    - 즉, **JVM 은 자바 프로그램이 어느 기기 또는 어느 운영체제에서도 실행될 수 있게 해줍니다.**
+- JVM 은 운영체제에 종속적이기 때문에 **운영체제에 맞는 JVM을 필요**로 합니다.
+    - 만약, 자바 소스 파일은 리눅스에서 만들었고 윈도우에서 이 파일을 실행하고 싶다면, 윈도우용 JVM을 설치합니다. 여기서 JVM은 운영체제에 종속적이라는 특징을 알 수 있습니다.
     
-    만약, 자바 소스 파일은 리눅스에서 만들었고 윈도우에서 이 파일을 실행하고 싶다면, 윈도우용 JVM을 설치한다. 여기서 JVM은 운영체제에 종속적이라는 특징을 알 수 있다.
-    
-
 ## 자바 가상 머신(JVM)의 동작 방식
 
-![https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png](https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png)
+<img width="600" src="https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png">
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4a4eb16-1fe4-4762-ba50-d5e6250306a2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053939Z&X-Amz-Expires=86400&X-Amz-Signature=e2e2a7819ca527f01433318f6ac2e345aa892c42586190963b2e4907289b258d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+<img width="600" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4a4eb16-1fe4-4762-ba50-d5e6250306a2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053939Z&X-Amz-Expires=86400&X-Amz-Signature=e2e2a7819ca527f01433318f6ac2e345aa892c42586190963b2e4907289b258d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 **1.** 자바로 개발된 프로그램을 실행하면 **JVM은 OS로부터 메모리를 할당**합니다.
 
@@ -83,15 +75,13 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 ---
 
-## (4) **런타임 데이터 영역 (Runtime Data Area)**
+### (4) **런타임 데이터 영역 (Runtime Data Area)**
 
-**JVM의 메모리 영역**으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역입니다. 이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack로 나눌 수 있습니다.
-
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c56b9800-97d9-49a9-87da-755c1dda522b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053757Z&X-Amz-Expires=86400&X-Amz-Signature=ac6006ae732544065e8dc0fc9f831b2e31add9f662ded080d1e0a03258a24eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
-
-![https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png](https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png)
-
-**런타임 데이터 영역은 JVM이 운영체제로부터 할당받은 메모리 영역**으로, **자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역**입니다.
+- **JVM의 메모리 영역**으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역입니다. 
+- 이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack로 나눌 수 있습니다.
+<img width="600" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c56b9800-97d9-49a9-87da-755c1dda522b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053757Z&X-Amz-Expires=86400&X-Amz-Signature=ac6006ae732544065e8dc0fc9f831b2e31add9f662ded080d1e0a03258a24eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
+<img width="600" src="https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png">
+- **런타임 데이터 영역은 JVM이 운영체제로부터 할당받은 메모리 영역**으로, **자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역**입니다.
 
 1. **모든 스레드가 공유해서 사용하는 영역**
     - Method Area(메서드 영역)
@@ -103,19 +93,20 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 ### 1. 모든 스레드가 공유해서 사용하는 영역
 
-### 1-1. **메서드 영역 (Method Area)**
+#### 1-1. **메서드 영역 (Method Area)**
 
 1. **모든 쓰레드가 공유**하며, 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관합니다.
     - 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보와 같은 각종 필드 정보들과 메서드 정보, 데이터 Type 정보, Constant Pool, static변수, final class 등이 생성되는 영역입니다.
     - jvm 벤더(별 구현체)마다 이 메서드 영역이 존재하는 위치가 다를 수 있다고 한다.
     - Java 8이후에는 PermGen이 완전히 제거 되어 Method Area는 Native Heap에 할당 된다.
-### 1-2. **힙 영역 (Heap Area)**
+#### 1-2. **힙 영역 (Heap Area)**
 
 1. **모든 쓰레드가 공유**하며, new 키워드로 생성된 **객체와 배열이 생성되는 영역**입니다.
     - 메소드 영역에 로드된 클래스만 생성이 가능하고 Garbage Collector가 참조되지 않는 메모리를 확인하고 제거하는 영역입니다.
 2. 주기적으로 **GC가 제거하는 영역**입니다.
 
-![image](https://user-images.githubusercontent.com/93559998/196344165-1fae6d5b-1310-4455-a142-d227aca2e910.png)
+<img width="600" src="https://user-images.githubusercontent.com/93559998/196344165-1fae6d5b-1310-4455-a142-d227aca2e910.png">
+
 ![image](https://miro.medium.com/max/786/0*rKZvTnuUkEc5LoXW.jpg)
 
 - Heap Area는 효율적인 GC를 위해 위와 같이 크게 3가지의 영역으로 나뉘게 됩니다.
@@ -133,7 +124,7 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 ### 2. 스레드(Thread)마다 하나씩 생성
 
-### 2-1. **스택 영역 (Stack Area)**
+#### 2-1. **스택 영역 (Stack Area)**
 
 지역변수, 파라미터, 리턴 값, 연산에 사용되는 임시 값 등이 생성되는 영역입니다.
 
@@ -143,13 +134,13 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 ![https://blog.kakaocdn.net/dn/ulBPu/btqSmAVJhzs/t5uaU3DyAmRUbNKnu10bak/img.png](https://blog.kakaocdn.net/dn/ulBPu/btqSmAVJhzs/t5uaU3DyAmRUbNKnu10bak/img.png)
 
-### 2-2. **PC 레지스터 (PC Register)**
+#### 2-2. **PC 레지스터 (PC Register)**
 
 1. 쓰레드가 시작하고 생성될 때마다 생성되는 공간으로 쓰레드마다 하나씩 존재합니다. 
     - 프로그램 카운터, 즉 현재 스레드가 실행되는 부분의 주소와 명령을 저장하고 있는 영역입니다.
 2. 쓰레드가 어떤 부분을 무슨 명령으로 실행해야할 지에 대한 기록을 하여 현재 수행중인 JVM 명령의 주소를 갖습니다.
 
-### 2-3. **네이티브 메서드 스택 (Native Method Stack)**
+#### 2-3. **네이티브 메서드 스택 (Native Method Stack)**
 
 1. 자바 이외의 언어(C, C++, 어셈블리 등)로 작성된 네이티브 코드를 실행할 때 사용되는 메모리 영역으로, Java가 아닌 C, C++로 작성된 메서드를 실행하는 스택입니다.
 2. 자바 네이티브 인터페이스(JNI: Java Native Interface)는 자바 가상 머신위에서 실행되고 있는 자바코드가 네이티브 응용 프로그램 그리고 C, C++ 그리고 어셈블리 같은 다른 언어들로 작성된 라이브러리들을 호출하거나 반대로 호출되는 것을 가능하게 하는 프로그래밍 프레임워크입니다.
@@ -162,7 +153,6 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 ---
 
 ### 출처
-
 - [https://steady-coding.tistory.com/305](https://steady-coding.tistory.com/305)
 - [https://coding-factory.tistory.com/828](https://coding-factory.tistory.com/828)
 - [https://www.tcpschool.com/java/java_array_memory](https://www.tcpschool.com/java/java_array_memory)
