@@ -46,7 +46,8 @@
 
 - 관심사 분리의 구체적인 예시
     
-    ![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%201.png)
+<!--     ![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%201.png) -->
+    ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8a3c38dd-bd2a-49f3-a6b8-7191d2f747ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T062104Z&X-Amz-Expires=86400&X-Amz-Signature=f30d56fb569f8930bc7c64aaecc55f6a36b3f1b33db7bfdb203c3d24275f362a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
     
     소스 코드상에서 계속 반복해서 사용되는 부분들을 흩어진 관심사(Crosscutting Concerns)라고 한다. AOP는 흩어진 관심사(Crosscutting Concerns)를 모듈화 하는 기법이다.
     
