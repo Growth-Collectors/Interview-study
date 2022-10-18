@@ -2,7 +2,7 @@
 매일 오후 1시 30분에 모여 미리 자료조사한 1인 1주제(총 5주제)에 대해 답변해보는 기술 면접 스터디입니다.
 
 ## Study information table
-### JAVA
+### Java
 [질문 리스트 링크 바로가기](https://github.com/Growth-Collectors/Interview-study/blob/main/JAVA/%EC%A7%88%EB%AC%B8%20%EB%A6%AC%EC%8A%A4%ED%8A%B8.md)
 
 date|contents|assignee
