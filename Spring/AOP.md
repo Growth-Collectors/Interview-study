@@ -51,7 +51,8 @@
     
     클래스 A, B, C에서 공통적으로 나타나는 색깔 블록은 중복되는 메서드, 필드, 코드 등이다. 이때 예를 들어 클래스 A의 주황색 블록을 수정한다면 클래스 B, C의 주황색 부분도 일일이 찾아 수정해야 한다. 따라서 주황색, 파란색, 빨간색 블록처럼 모듈화 시켜놓고 어디에 적용시킬지만 정의해줌으로써 해결한다. 이때 모듈화 시켜 놓은 블럭을 Aspect라고 한다.
     
-    ![토비의 스프링 vol.1 p.505](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%202.png)
+    ![토비의 스프링 vol.1 p.505](https://user-images.githubusercontent.com/69442847/196351827-208411e4-2d82-47c5-a7d6-7bce4ada821f.png)
+
     
     토비의 스프링 vol.1 p.505
     
@@ -157,7 +158,7 @@ Spring AOP는 **프록시 패턴**이라는 디자인 패턴을 사용해서 AOP
 
 그리고 원본 클래스가 사용되는 지점에서 프록시를 대신 사용한다.
 
-![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%203.png)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b1dd301-f955-4d9d-bfda-ce5207a16f7f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T062658Z&X-Amz-Expires=86400&X-Amz-Signature=ebc919664cb421d36c1594683a2a22ceb639ef7a7c1e105d39dff6169d76c367&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 프록시 패턴에는 **interface**가 존재하고 **Client**는 이 interface 타입으로 Proxy 객체를 사용하게 된다.
 
