@@ -176,7 +176,7 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 ### 추가 링크
 
-- 참고
+참고
 
 - [JVM에 관하여 - Part 3, Run-Time Data Area](https://tecoble.techcourse.co.kr/post/2021-08-09-jvm-memory/)
 
