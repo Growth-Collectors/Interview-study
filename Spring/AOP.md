@@ -24,8 +24,8 @@ tag : spring
 
 # AOP
 
-<aside>
-💡 Aspect Oriented Programming 의 약자로 관점 지향 프로그래밍이라고 불린다.
+
+💡 **Aspect Oriented Programming ** 의 약자로 관점 지향 프로그래밍이라고 불린다.
 
 **여러 오브젝트에 나타나는 공통적인 부가기능을 모듈화하여 재사용하는 기법이다.**
 
