@@ -1,9 +1,5 @@
 # JVM 구조
 
-스터디 날짜: 2022/10/06
-
-자료조사: [@HanaHww2](https://github.com/HanaHww2), [@Yerimi11](https://github.com/Yerimi11)
-
 태그: java, jvm
 
 
@@ -181,3 +177,11 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 - [JVM에 관하여 - Part 3, Run-Time Data Area](https://tecoble.techcourse.co.kr/post/2021-08-09-jvm-memory/)
 
 - [[JVM구조]JVM으로 보는 java 프로그램의 실행 과정](https://technote-mezza.tistory.com/72)
+
+
+
+---
+스터디 날짜: 2022/10/06
+
+자료조사: [@HanaHww2](https://github.com/HanaHww2), [@Yerimi11](https://github.com/Yerimi11)
+

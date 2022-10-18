@@ -35,7 +35,7 @@
 
 ### AOP 상세 내용
 
-![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled.png)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8a3c38dd-bd2a-49f3-a6b8-7191d2f747ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T062104Z&X-Amz-Expires=86400&X-Amz-Signature=f30d56fb569f8930bc7c64aaecc55f6a36b3f1b33db7bfdb203c3d24275f362a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 관점 지향은 어떤 로직을 기준으로 핵심적인 관점, 부가적인 관점으로 나누어서 보고 그 관점을 기준으로 모듈화 하겠다는 것이다. 다음 그림처럼 **AOP는 이 횡단 관심사 코드를 모듈화(Aspect)하여 관리**한다. 따라서 더 이상 기존 비즈니스 코드에 횡단 관심사 코드를 작성하지 않아도 된다.
 
@@ -45,8 +45,7 @@
 - 핵심 관심사(Core Concerns) : 업무 로직 코드
 
 - 관심사 분리의 구체적인 예시
-    
-    ![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%201.png)
+    ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e0ff815d-2251-4e43-8b52-d34584d8270e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T062243Z&X-Amz-Expires=86400&X-Amz-Signature=eef1b82ef8bf9b63d3a517f2f30af0f1ebb1f5d9182224349514a7f71ab9d406&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
     
     소스 코드상에서 계속 반복해서 사용되는 부분들을 흩어진 관심사(Crosscutting Concerns)라고 한다. AOP는 흩어진 관심사(Crosscutting Concerns)를 모듈화 하는 기법이다.
     
