@@ -1,10 +1,9 @@
 # JVM 구조
 
-DONE: Jioo Jung
-TODO 공부 더 해야겠다: Hwang Hanah, namnam k, 또로리, Yerim
 날짜: 2022/10/06
-상태: Done
+
 자료조사: Hwang Hanah, Yerim
+
 태그: java, jvm
 
 ## JVM, GC 관련 질문
