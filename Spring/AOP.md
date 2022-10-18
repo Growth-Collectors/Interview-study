@@ -1,11 +1,9 @@
 # AOP
 
-질문 
+tag : spring
 
-- AOP를 구현해봤는지
-- Spring AOP 기능 중 가장 많이 활용되는 것?
 
-배경 지식
+### 배경 지식
 
 - 스프링의 3대 기반 기술 : AOP, IoC/DI, 서비스 추상화
 - 학습 내용 : AOP 등장 배경 , 도입 이유, 장점
@@ -26,8 +24,8 @@
 
 # AOP
 
-<aside>
-💡 **Aspect Oriented Programming**의 약자로 관점 지향 프로그래밍이라고 불린다.
+
+**Aspect Oriented Programming** 의 약자로 관점 지향 프로그래밍이라고 불린다.
 
 **여러 오브젝트에 나타나는 공통적인 부가기능을 모듈화하여 재사용하는 기법이다.**
 
@@ -51,7 +49,8 @@
     
     클래스 A, B, C에서 공통적으로 나타나는 색깔 블록은 중복되는 메서드, 필드, 코드 등이다. 이때 예를 들어 클래스 A의 주황색 블록을 수정한다면 클래스 B, C의 주황색 부분도 일일이 찾아 수정해야 한다. 따라서 주황색, 파란색, 빨간색 블록처럼 모듈화 시켜놓고 어디에 적용시킬지만 정의해줌으로써 해결한다. 이때 모듈화 시켜 놓은 블럭을 Aspect라고 한다.
     
-    ![토비의 스프링 vol.1 p.505](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%202.png)
+    ![토비의 스프링 vol.1 p.505](https://user-images.githubusercontent.com/69442847/196351827-208411e4-2d82-47c5-a7d6-7bce4ada821f.png)
+
     
     토비의 스프링 vol.1 p.505
     
@@ -157,7 +156,7 @@ Spring AOP는 **프록시 패턴**이라는 디자인 패턴을 사용해서 AOP
 
 그리고 원본 클래스가 사용되는 지점에서 프록시를 대신 사용한다.
 
-![Untitled](AOP%208202a6935bd8459c89fe839a3426a155/Untitled%203.png)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b1dd301-f955-4d9d-bfda-ce5207a16f7f/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T062658Z&X-Amz-Expires=86400&X-Amz-Signature=ebc919664cb421d36c1594683a2a22ceb639ef7a7c1e105d39dff6169d76c367&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 프록시 패턴에는 **interface**가 존재하고 **Client**는 이 interface 타입으로 Proxy 객체를 사용하게 된다.
 
@@ -191,20 +190,7 @@ Proxy 객체는 기존의 타겟 객체(Real Subject)를 참조하고 있다. Pr
 
 ---
 
-질문
-
-- 횡단 관심사란?
-    - 공통적 부가기능 코드 (트랜잭션/로그/보안/인증 처리 등)
-- AOP의 핵심은?
-    - 공통 부가 기능을 모듈화 함으로써 중복 코드를 제거!
-- AOP와 OOP의 차이점?
-    - OOP와 상반된 개념이 아니다, 객체 단위로 프로그래밍을 할 때 AOP는 객체간 공통적인 부가 기능들을 관심사 분리를 통해 의존성을 낮춤으로써 OOP가 객체 지향의 가치를 높이도록 도와준다..!
-- Spring AOP에서 프록시 패턴은 사용하는 이유?
-    - 기존 코드의 변경 없이 접근 제어 또는 부가 기능 추가를 위해서다.
-
----
-
-- 출처
+[출처]
 
 코드 예시가 잘 나와있음
 
@@ -221,3 +207,8 @@ Proxy 객체는 기존의 타겟 객체(Real Subject)를 참조하고 있다. Pr
 [AOP와 @Transactional의 동작 원리](https://velog.io/@ann0905/AOP%EC%99%80-Transactional%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC)
 
 [AOP가 왜 필요할까? | Moon](https://gmoon92.github.io/spring/aop/2019/02/09/why-used-aop.html)
+
+---
+스터디 날짜: 2022/10/06
+
+자료조사: [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)

@@ -10,11 +10,11 @@ date|contents|assignee
 2022.10.18|[JVM 구조](https://github.com/Growth-Collectors/Interview-study/blob/main/JAVA/JVM%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9.md)| [@Yerimi11](https://github.com/Yerimi11), [@HanaHww2](https://github.com/HanaHww2)
 
 ### Spring
+[질문 리스트 링크 바로가기](https://github.com/Growth-Collectors/Interview-study/blob/3c6b0f6a51071188a0071ed9c2ba18d51b12d8df/Spring/%EC%A7%88%EB%AC%B8%20%EB%A6%AC%EC%8A%A4%ED%8A%B8.md)
+
 date|contents|assignee
 --|--|--
-2022.10.18|[AOP](https://github.com/Growth-Collectors/JAVA/.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
-
-
+2022.10.18|[AOP](Spring/AOP.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
 
 
 ---
