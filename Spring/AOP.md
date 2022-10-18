@@ -1,11 +1,5 @@
 # AOP
 
-TODO 공부 더 해야겠다: Hwang Hanah, namnam k, 또로리, Yerim, Jioo Jung
-날짜: 2022/10/14
-상태: Not started
-자료조사: Yerim, Jioo Jung, namnam k
-태그: spring
-
 질문 
 
 - AOP를 구현해봤는지
