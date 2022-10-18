@@ -1,11 +1,11 @@
 # JVM 구조
 
-DONE: Jioo Jung
-TODO 공부 더 해야겠다: Hwang Hanah, namnam k, 또로리, Yerim
-날짜: 2022/10/06
-상태: Done
-자료조사: Hwang Hanah, Yerim
+스터디 날짜: 2022/10/06
+
+자료조사: Hanah, Yerim
+
 태그: java, jvm
+
 
 ## *JVM이란?*
 
@@ -31,15 +31,15 @@ JVM은 **Java Virtual Machine**의 약자로, 자바 가상 머신이라고 부�
     만약, 자바 소스 파일은 리눅스에서 만들었고 윈도우에서 이 파일을 실행하고 싶다면, 윈도우용 JVM을 설치한다. 여기서 JVM은 운영체제에 종속적이라는 특징을 알 수 있다.
     
 
-## **자바 가상 머신(JVM)의 동작 방식**
+## 자바 가상 머신(JVM)의 동작 방식
 
 ![https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png](https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png)
 
-![Untitled](JVM%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20ef7cecd875b34f338844e7a23ae5016c/Untitled.png)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4a4eb16-1fe4-4762-ba50-d5e6250306a2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053939Z&X-Amz-Expires=86400&X-Amz-Signature=e2e2a7819ca527f01433318f6ac2e345aa892c42586190963b2e4907289b258d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 **1.** 자바로 개발된 프로그램을 실행하면 **JVM은 OS로부터 메모리를 할당**합니다.
 
-**2.** **자바 컴파일러(javac)**가 자바 소스코드(.java)를 자바 바이트코드(.class)로 컴파일합니다.
+**2.** 자바 컴파일러(javac)가 자바 소스코드(.java)를 자바 바이트코드(.class)로 컴파일합니다.
 
 **3. Class Loader**를 통해 **JVM Runtime Data Area**로 로딩합니다.
 
@@ -57,15 +57,15 @@ JVM의 구조는 크게 **Garbage Collector, Execution Engine, Class Loader, Run
 
 ![https://blog.kakaocdn.net/dn/IXgMz/btrvglUCR65/MaffyNzf1y1oV8BTBKADKk/img.png](https://blog.kakaocdn.net/dn/IXgMz/btrvglUCR65/MaffyNzf1y1oV8BTBKADKk/img.png)
 
-자바는 동적으로 클래스를 읽어오므로, 프로그램이 실행 중인 런타임시 동적으로 클래스를 로드하여 모든 코드가 자바 가상 머신과 연결됩니다. 이렇게 **동적으로 클래스를 로딩해주는 역할**을 하는 것이 바로 **클래스 로더(class loader)**입니다. 클래스 로더는 이처럼 **JVM 내로 클래스 파일을 로드**하고, 링크를 통해 배치하는 작업을 수행하는 모듈입니다.
+자바는 동적으로 클래스를 읽어오므로, 프로그램이 실행 중인 런타임시 동적으로 클래스를 로드하여 모든 코드가 자바 가상 머신과 연결됩니다. 이렇게 **동적으로 클래스를 로딩해주는 역할**을 하는 것이 바로 클래스 로더(class loader)입니다. 클래스 로더는 이처럼 **JVM 내로 클래스 파일을 로드**하고, 링크를 통해 배치하는 작업을 수행하는 모듈입니다.
 
-자바에서 소스를 작성하면 .java파일이 생성되고 .java소스를 컴파일러가 컴파일하면 .class파일이 생성되는데, **클래스 로더는 .class 파일을 묶어서 JVM이 운영체제로부터 할당받은 메모리 영역인 Runtime Data Area로 적재**합니다.
+자바에서 소스를 작성하면 .java파일이 생성되고 .java소스를 컴파일러가 컴파일하면 .class파일이 생성되는데, 클래스 로더는 .class 파일을 묶어서 JVM이 운영체제로부터 할당받은 메모리 영역인 Runtime Data Area로 적재합니다.
 
 ### (2) **실행 엔진(Execution Engine)**
 
 클래스 로더에 의해 JVM으로 로드된 .class 파일(바이트코드)들은 Runtime Data Areas의 Method Area에 배치되는데, 배치된 이후에 **JVM은 Method Area의 바이트 코드를 실행 엔진(Execution Engine)에 제공**하여, 정의된 내용대로 바이트 코드를 실행시킵니다. 
 
-이때, **로드된 바이트코드를 실행하는 런타임 모듈**이 **실행 엔진(Execution Engine)**입니다. 실행 엔진은 바이트코드를 **명령어 단위로 읽어서 실행**합니다.
+이때, **로드된 바이트코드를 실행하는 런타임 모듈**이 실행 엔진(Execution Engine)입니다. 실행 엔진은 바이트코드를 **명령어 단위로 읽어서 실행**합니다.
 
 최초 JVM이 나왔을 당시에는 **인터프리터 방식**이었기때문에 속도가 느리다는 단점이 있었지만 **JIT 컴파일러** 방식을 통해 이 점을 보완하였습니다. 
 
@@ -95,7 +95,7 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 **JVM의 메모리 영역**으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역입니다. 이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack로 나눌 수 있습니다.
 
-![Untitled](JVM%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20ef7cecd875b34f338844e7a23ae5016c/Untitled%201.png)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c56b9800-97d9-49a9-87da-755c1dda522b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053757Z&X-Amz-Expires=86400&X-Amz-Signature=ac6006ae732544065e8dc0fc9f831b2e31add9f662ded080d1e0a03258a24eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 ![https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png](https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png)
 
@@ -122,7 +122,8 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
     - 메소드 영역에 로드된 클래스만 생성이 가능하고 Garbage Collector가 참조되지 않는 메모리를 확인하고 제거하는 영역입니다.
 2. 주기적으로 **GC가 제거하는 영역**입니다.
 
-![Untitled](JVM%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20ef7cecd875b34f338844e7a23ae5016c/Untitled%202.png)
+![image](https://user-images.githubusercontent.com/93559998/196344165-1fae6d5b-1310-4455-a142-d227aca2e910.png)
+
 
 - Heap Area는 효율적인 GC를 위해 위와 같이 크게 3가지의 영역으로 나뉘게 됩니다.
 - **Young Generation 영역**은 자바 객체가 생성되자마자 저장되고, 생긴지 얼마 안되는 객체가 저장되는 공간입니다.
@@ -135,7 +136,7 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
     - 시간이 오래 걸리는 작업이고 이 때 **GC를 실행하는 쓰레드를 제외한 모든 스레드는 작업을 멈추게 됩니다. 이를 'Stop-the-World'** 라 합니다.
     - **Old영역의 메모리를 회수하는 GC를 Major GC**라고 합니다.
 
-### 2. 스레드**(Thread) 마다 하나씩 생성**
+### 2. 스레드(Thread)마다 하나씩 생성
 
 ### 2-1. **스택 영역 (Stack Area)**
 
