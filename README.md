@@ -12,7 +12,7 @@ date|contents|assignee
 ### Spring
 date|contents|assignee
 --|--|--
-2022.10.18|[AOP](https://github.com/Growth-Collectors/JAVA/.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
+2022.10.18|[AOP](Spring/AOP.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
 
 
 
