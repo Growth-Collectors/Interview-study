@@ -79,10 +79,6 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 **GC역할을 수행하는 스레드를 제외한 나머지 모든 스레드들은 일시정지상태가 됩니다. (stop-the-world)**
 
-**(3) Garbage Collector**
-
-**Garbage Collector(GC)는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거**하는 역할을 합니다. 이때, GC가 역할을 하는 시간은 언제인지 정확히 알 수 없습니다.
-
 ***가비지 컬렉터에 대해 더 자세한 내용 링크 →*** [[Java] 가비지 컬렉션(GC, Garbage Collection) 총정리](https://coding-factory.tistory.com/829)
 
 ---
@@ -111,7 +107,8 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 1. **모든 쓰레드가 공유**하며, 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관합니다.
     - 클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보와 같은 각종 필드 정보들과 메서드 정보, 데이터 Type 정보, Constant Pool, static변수, final class 등이 생성되는 영역입니다.
-
+    - jvm 벤더(별 구현체)마다 이 메서드 영역이 존재하는 위치가 다를 수 있다고 한다.
+    - Java 8이후에는 PermGen이 완전히 제거 되어 Method Area는 Native Heap에 할당 된다.
 ### 1-2. **힙 영역 (Heap Area)**
 
 1. **모든 쓰레드가 공유**하며, new 키워드로 생성된 **객체와 배열이 생성되는 영역**입니다.
@@ -119,16 +116,18 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 2. 주기적으로 **GC가 제거하는 영역**입니다.
 
 ![image](https://user-images.githubusercontent.com/93559998/196344165-1fae6d5b-1310-4455-a142-d227aca2e910.png)
-
+![image](https://miro.medium.com/max/786/0*rKZvTnuUkEc5LoXW.jpg)
 
 - Heap Area는 효율적인 GC를 위해 위와 같이 크게 3가지의 영역으로 나뉘게 됩니다.
+    - Perm Gen 영역은 자바 8 이후 metaspace로 대체되었으며, 더 이상 힙 영역이 아닌 네이티브 메모리 영역으로 옮겨졌다.
+    - 과거의 PermGen은 현재 Metaspace 로 불리우는데 Method Area는 Meta 정보를 저장 하기 때문이다. PermGen에서는 Default로 Maximum size를 할당 하였는데 만약 해당 사이즈에 도달 하면 OutOfMemoryErr 가 생성 되었다.
 - **Young Generation 영역**은 자바 객체가 생성되자마자 저장되고, 생긴지 얼마 안되는 객체가 저장되는 공간입니다.
     - Heap 영역에 객체가 생성되면 최초로 Eden 영역에 할당됩니다.
     - 그리고 이 영역에 데이터가 어느정도 쌓이게 되면 참조정도에 따라 Servivor의 빈 공간으로 이동되거나 회수됩니다.
     - **Young Generation(Eden+Servivor) 영역**이 차게 되면 또 참조정도에 따라 Old영역으로 이동 되게 되거나 회수됩니다.
     - 이렇게 Young Generation과 Tenured Generation 에서의 GC를 **Minor GC** 라고 합니다.
     - minor GC에서도 다른 스레드의 동작이 멈추는 현상은 짧게나마 발생한다고 합니다.
-- **Old영역**에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 GC가 실행됩니다.
+- **Old Generation 영역**에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 GC가 실행됩니다.
     - 시간이 오래 걸리는 작업이고 이 때 **GC를 실행하는 쓰레드를 제외한 모든 스레드는 작업을 멈추게 됩니다. 이를 'Stop-the-World'** 라 합니다.
     - **Old영역의 메모리를 회수하는 GC를 Major GC**라고 합니다.
 
@@ -170,15 +169,11 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 - [https://velog.io/@dev_isaac/JVM#runtime-data-areas](https://velog.io/@dev_isaac/JVM#runtime-data-areas)
 - [https://thisisprogrammingworld.tistory.com/m/179](https://thisisprogrammingworld.tistory.com/m/179)
 
-### 추가 링크
-
-참고
-
+### 추가 참고 링크
 - [JVM에 관하여 - Part 3, Run-Time Data Area](https://tecoble.techcourse.co.kr/post/2021-08-09-jvm-memory/)
-
 - [[JVM구조]JVM으로 보는 java 프로그램의 실행 과정](https://technote-mezza.tistory.com/72)
-
-
+- [JVM Runtime Data Area- Heap, Method Area](https://mia-dahae.tistory.com/m/101)
+- [[Java] 자바 메타스페이스(Metaspace)에 대해 알아보자.](https://jaemunbro.medium.com/java-metaspace%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90-ac363816d35e)
 
 ---
 스터디 날짜: 2022/10/06
