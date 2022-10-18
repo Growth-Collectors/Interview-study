@@ -1,4 +1,7 @@
 # AOP
+tag : spring
+---
+
 
 질문 
 
@@ -222,3 +225,8 @@ Proxy 객체는 기존의 타겟 객체(Real Subject)를 참조하고 있다. Pr
 [AOP와 @Transactional의 동작 원리](https://velog.io/@ann0905/AOP%EC%99%80-Transactional%EC%9D%98-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC)
 
 [AOP가 왜 필요할까? | Moon](https://gmoon92.github.io/spring/aop/2019/02/09/why-used-aop.html)
+
+---
+스터디 날짜: 2022/10/06
+
+자료조사: [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
