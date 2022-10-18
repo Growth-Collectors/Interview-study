@@ -84,22 +84,22 @@
 
 런타임 데이터 영역은 JVM의 메모리 영역으로 **자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역**입니다.
 
-**모든 스레드가 공유해서 사용 (GC의 대상)**
+- **모든 스레드가 공유해서 사용하는 영역**
+    - Method Area(메서드 영역)
+    - Heap Area(힙 영역) - GC의 대상
+- **스레드(Thread) 마다 하나씩 생성**
+    - Stack Area(스택 영역)
+    - PC Register(PC 레지스터)
+    - Native Method Stack(네이티브 메서드 스택)
 
-- 힙 영역 (Heap Area)
-- 메서드 영역(Method Area)
+### 1. 모든 스레드가 공유해서 사용하는 영역
 
-**스레드(Thread) 마다 하나씩 생성**
+### 1-1. **메서드 영역 (Method Area)**
 
-- 스택 영역(Stack Area)
-- PC 레지스터 (PC Register)
-- 네이티브 메서드 스택(Native Method Stack)
+클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보와 같은 각종 필드 정보들과 
+메서드 정보, 데이터 Type 정보, Constant Pool, static변수, final class 등이 생성되는 영역입니다.
 
-### **메서드 영역 (Method Area)**
-
-클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보와 같은 각종 필드 정보들과 메서드 정보, 데이터 Type 정보, Constant Pool, static변수, final class 등이 생성되는 영역입니다.
-
-### **힙 영역 (Heap Area)**
+### 1-2. **힙 영역 (Heap Area)**
 
 **1.** new 키워드로 생성된 **객체와 배열이 생성되는 영역**입니다.
 
@@ -107,31 +107,32 @@
 
 ![https://blog.kakaocdn.net/dn/cmeYY6/btrveK8fwH2/NwdYae5gEQHih3lyV83as0/img.png](https://blog.kakaocdn.net/dn/cmeYY6/btrveK8fwH2/NwdYae5gEQHih3lyV83as0/img.png)
 
-Heap Area는 효율적인 GC를 위해 위와 같이 크게 3가지의 영역으로 나뉘게 됩니다.
+- Heap Area는 효율적인 GC를 위해 위와 같이 크게 3가지의 영역으로 나뉘게 됩니다.
+- **Young Generation 영역**은 자바 객체가 생성되자마자 저장되고, 생긴지 얼마 안되는 객체가 저장되는 공간입니다.
+    
+     Heap 영역에 객체가 생성되면 최초로 Eden 영역에 할당됩니다. 그리고 이 영역에 데이터가 어느정도 쌓이게 되면 참조정도에 따라 Servivor의 빈 공간으로 이동되거나 회수됩니다.
+    
+    **Young Generation(Eden+Servivor) 영역**이 차게 되면 또 참조정도에 따라 Old영역으로 이동 되게 되거나 회수됩니다. 
+    
+    이렇게 Young Generation과 Tenured Generation 에서의 GC를 Minor GC 라고 합니다. 
+    
+- **Old영역**에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 GC가 실행됩니다.
+    
+    시간이 오래 걸리는 작업이고 이 때 **GC를 실행하는 쓰레드를 제외한 모든 스레드는 작업을 멈추게 됩니다. 이를 'Stop-the-World'** 라 합니다. 
+    
+    그리고 이렇게 **'Stop-the-World'가 발생하고 Old영역의 메모리를 회수하는 GC를 Major GC**라고 합니다.
 
-**Young Generation 영역**은 자바 객체가 생성되자마자 저장되고, 생긴지 얼마 안되는 객체가 저장되는 공간입니다.
+### 2. 스레드**(Thread) 마다 하나씩 생성**
 
- Heap 영역에 객체가 생성되면 최초로 Eden 영역에 할당됩니다. 그리고 이 영역에 데이터가 어느정도 쌓이게 되면 참조정도에 따라 Servivor의 빈 공간으로 이동되거나 회수됩니다.
-
-**Young Generation(Eden+Servivor) 영역**이 차게 되면 또 참조정도에 따라 Old영역으로 이동 되게 되거나 회수됩니다. 
-
-이렇게 Young Generation과 Tenured Generation 에서의 GC를 Minor GC 라고 합니다. 
-
-**Old영역**에 할당된 메모리가 허용치를 넘게 되면, Old 영역에 있는 모든 객체들을 검사하여 참조되지 않는 객체들을 한꺼번에 삭제하는 GC가 실행됩니다. 
-
-시간이 오래 걸리는 작업이고 이 때 **GC를 실행하는 쓰레드를 제외한 모든 스레드는 작업을 멈추게 됩니다. 이를 'Stop-the-World'** 라 합니다. 
-
-그리고 이렇게 **'Stop-the-World'가 발생하고 Old영역의 메모리를 회수하는 GC를 Major GC**라고 합니다.
-
-### **스택 영역 (Stack Area)**
+### 2-1. **스택 영역 (Stack Area)**
 
 지역변수, 파라미터, 리턴 값, 연산에 사용되는 임시 값 등이 생성되는 영역입니다.
 
-### **PC 레지스터 (PC Register)**
+### 2-2. **PC 레지스터 (PC Register)**
 
 Thread가 생성될 때마다 생성되는 영역으로 프로그램 카운터, 즉 현재 스레드가 실행되는 부분의 주소와 명령을 저장하고 있는 영역입니다.
 
-### **네이티브 메서드 스택 (Native Method Stack)**
+### 2-3. **네이티브 메서드 스택 (Native Method Stack)**
 
 **1.** 자바 이외의 언어(C, C++, 어셈블리 등)로 작성된 네이티브 코드를 실행할 때 사용되는 메모리 영역으로 일반적인 C 스택을 사용합니다.
 
