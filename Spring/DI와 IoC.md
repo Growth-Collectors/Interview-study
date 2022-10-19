@@ -154,7 +154,7 @@ Spring이 어느 것을 이용해서 주입시킬까
 
 - 스프링 IOC를 담당하는 컨테이너
 
-Bean 등록, 생성, 조회, 반환, 관리 담당 Bean Factory를 바로 사용하지 않고 이를 확장한 application context 를 이용
+- Bean 등록, 생성, 조회, 반환, 관리 담당 Bean Factory를 바로 사용하지 않고 이를 확장한 application context 를 이용
 
 **Application context** 
 
@@ -168,7 +168,7 @@ Container
 
 - IOC 방식으로 Bean을 관리하는 의미에서 Bean Factory, application context를 의미
 
-객체를 관리하는 컨테이너, 컨테이너에서 객체를 담아 두고, 필요할 때 컨테이너로부터 객체를 가져와 사용할 수 있음
+- 객체를 관리하는 컨테이너, 컨테이너에서 객체를 담아 두고, 필요할 때 컨테이너로부터 객체를 가져와 사용할 수 있음
 
 [출처]
 
