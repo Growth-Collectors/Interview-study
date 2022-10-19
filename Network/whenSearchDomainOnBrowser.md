@@ -102,6 +102,7 @@ URL을 입력받은 브라우저는 일단 이 URL을 파싱합니다.
 - [https://velog.io/@eesiwoo/www.google.com을-검색하면-어떤-일이-일어날까](https://velog.io/@eesiwoo/www.google.com%EC%9D%84-%EA%B2%80%EC%83%89%ED%95%98%EB%A9%B4-%EC%96%B4%EB%96%A4-%EC%9D%BC%EC%9D%B4-%EC%9D%BC%EC%96%B4%EB%82%A0%EA%B9%8C)
 - [https://oizys.tistory.com/36](https://oizys.tistory.com/36)
 
+---
 
 - 태그: network
 - 날짜: 2022/10/17
