@@ -1,4 +1,4 @@
-# 스프링 MVC 구조
+# 스프링 MVC 구조와 Survlet
 
 태그: spring
     
@@ -8,43 +8,62 @@
 
 ## Servlet이란?
 
-**동적 웹 페이지를 만들 때 사용되는 자바 기반의 웹 애플리케이션 프로그래밍 기술로서**
-자바 코드 속에 HTML 코드가 들어가는 형태입니다.
+서블릿은 클라이언트의 요청을 처리하고, 그 결과를 반환하는 Servlet 클래스의 구현 규칙을 지킨 자바 웹 프로그래밍 기술입니다.
+동적 웹 페이지를 만들 때 사용되는 자바 기반의 웹 애플리케이션 프로그래밍 기술로서 자바 코드 속에 HTML 코드가 들어가는 형태입니다.
+
+- 예를 들어, 어떠한 사용자가 로그인을 하려고 할 때. 사용자는 아이디와 비밀번호를 입력하고, 로그인 버튼을 누릅니다. 
+그때 서버는 클라이언트의 아이디와 비밀번호를 확인하고, 다음 페이지를 띄워주어야 하는데, 이러한 역할을 수행하는 것이 바로 서블릿(Servlet)입니다. 그래서 서블릿은 자바로 구현 된 CGI라고 흔히 말합니다.
 
 
-### **1. Servlet의 생명 주기**
+### **1. Servlet과 일반 자바 객체는 무슨 차이가 있는가?**
 
-- 클라이언트 요청이 들어오면 서블릿 컨테이너는 서블릿이 메모리에 있는지 확인한다. 메모리에 없다면 `init()` 메소드를 호출하여 적재한다.
-- 클라이언트 요청에 따라서 `service()` 메소드를 통해 요청에 대한 응답이 `doGet()`, `doPost()`로 분기한다.
-- 서블릿 컨테이너가 서블릿에 종료 요청을 하면 `destory()` 메소드가 호출된다. 종료 시 처리해야 하는 작업은 `destory()` 메소드를 오버라이딩하여 구현하면된다. `destory()` 메소드가 끝난 서블릿 인스턴스는 GC에 의해 제거된다.
+JVM에서 호출 방식은 서블릿과 일반 클래스 모두 같으나, 
+서블릿은 `main()` 메소드로 직접 호출되지 않고, 웹 컨테이너(Servlet Container)에 의해 실행된다.
 
-### **2. Servlet과 일반 자바 객체는 무슨 차이가 있는가?**
+### **2. Servlet의 동작 방식**
 
-JVM에서 호출 방식은 서블릿과 일반 클래스 모두 같으나, 서블릿은 `main()` 메소드로 직접 호출되지 않고, 웹 컨테이너(Servlet Container)에 의해 실행된다.
+![](https://t1.daumcdn.net/cfile/tistory/993A7F335A04179D20)
 
+- 사용자가 URL을 입력하면 요청(HTTP Request)이 `Servlet Container`로 전송된다.
+- 요청을 전송 받은 서블릿 컨테이너는  HttpServletRequest, HttpServletResponse 객체를 생성한다.
+- web.xml을 기반으로 사용자가 요청한 URL이 어느 서블릿에 대한 요청인지 찾는다.
+- 서블릿의 `service()` 메소드를 호출한 후 클라이언트의 GET, POST 여부에 따라 `doGet()` 혹은 `doPost()` 메소드를 호출한다.
+- 호출된 메소드는 동적 페이지를 생성한 후 HttpServletResponse 객체에 응답을 보낸다.
+- 클라이언트에 최종 결과를 응답한 후 HttpServletRequest, HttpServletResponse 객체를 소멸한다.
+
+### **3. Servlet의 특징**
+- 클라이언트의 요청에 대해 동적으로 작동하는 웹 어플리케이션 컴포넌트
+- html을 사용하여 요청에 응답한다.
+- Java Thread를 이용하여 동작한다.
+- MVC 패턴에서 Controller로 이용된다.
+- HTTP 프로토콜 서비스를 지원하는 javax.servlet.http.HttpServlet 클래스를 상속받는다.
+- UDP보다 처리 속도가 느리다.
+- HTML 변경 시 Servlet을 재컴파일해야 하는 단점이 있다.
+
+- 일반적으로 웹서버는 정적인 페이지만을 제공합니다. 여기서 웹서버가 동적인 페이지를 제공할 수 있도록 도와주는 어플리케이션이 서블릿이며, 동적인 페이지를 생성하는 어플리케이션이 CGI입니다. 
 
 ## Servlet Container란?
 
-구현되어 있는 Servlet 클래스의 규칙에 맞게 서블릿 객체를 생성, 초기화, 호출, 종료하는 생명 주기를 관리한다. (ex -톰캣)
+- 서블릿을 관리해주는 컨테이너이다.
+- 구현되어 있는 Servlet 클래스의 규칙에 맞게 서블릿 객체를 생성, 초기화, 호출, 종료하는 생명 주기를 관리한다. 
+- 서블릿 컨테이너는 클라이언트의 요청(Request)을 받아주고 응답(Response)할 수 있게, 웹서버와 소켓으로 통신하며 대표적인 예로 `톰캣(Tomcat)`이 있다.
 ⇒ 개발자가 **웹서버와 통신하기 위한** 복잡한 일들(소켓 생성, 특정 포트 리스닝, 스트림 생성 등)을 할 필요가 없게 해준다.
 
-### **1. Servlet Container의 특징을 설명하라.**
+### **1. Servlet Container의 특징**
 
-- 개발자가 비즈니스 로직에 집중할 수 있도록 HTTP 요청 메시지 파싱, Content-Type 확인, HTTP 응답 메시지 생성 등 작업을 대신 처리 해준다.
+- 개발자가 비즈니스 로직에 집중할 수 있도록 HTTP 요청 메시지 파싱, Content-Type 확인, HTTP 응답 메시지 생성 등 작업과 같은 **웹서버와의 통신을 대신 처리** 해준다.
 - **서블릿의 생명 주기를 관리**한다.
 - 요청이 올 때마다 자바 스레드 하나를 생성하여 **멀티 스레딩 처리**를 한다.
+- 서블릿 컨테이너를 사용하면 개발자는 **보안에 관련된 내용을 서블릿이나 자바 클래스에 구현해놓지 않아도 된다.**
 
-### **2. Servlet의 동작 방식을 설명하라.**
+### **2. Servlet의 생명 주기**
+서블릿 컨테이너는 서블릿의 생명주기를 관리합니다.
 
-- 사용자가 URL을 입력하면 요청이 서블릿 컨테이너로 전송된다.
-- 요청을 전송 받은 서블릿 컨테이너는 Http Request, Http Response 객체를 생성한다.
-- 사용자가 요청한 URL이 어느 서블릿에 대한 요청인지 찾는다. 위 예제에서는 helloServlet을 찾게 된다.
-- 서블릿의 `service()` 메소드를 호출한 후 클라이언트의 GET, POST 여부에 따라 `doGet()`, `doPost()` 메소드를 호출한다.
-- 동적 페이지를 생성한 후 HttpServletResponse 객체에 응답을 보낸다.
-- 클라이언트에 최종 결과를 응답한 후 HttpServletRequest, HttpServletResponse 객체를 소멸한다.
+- 클라이언트 요청이 들어오면 서블릿 컨테이너는 서블릿이 메모리에 있는지 확인한다. 메모리에 없다면 `init()` 메소드를 호출하여 적재한다.
+- 클라이언트 요청에 따라서 `service()` 메소드를 통해 요청에 대한 응답이 `doGet()`, `doPost()`로 분기한다. 이 때, HttpServletRequest, HttpServletResponse에 의해 request와 response객체가 제공된다.
+- 서블릿 컨테이너가 서블릿에 종료 요청을 하면 `destory()` 메소드가 호출된다. 종료 시 처리해야 하는 작업은 `destory()` 메소드를 오버라이딩하여 구현하면된다. `destory()` 메소드가 끝난 서블릿 인스턴스는 GC에 의해 제거된다.
 
-
-### **3. Servlet Container의 동작 과정을 설명하라.**
+### **3. Servlet Container의 동작 과정**
 
 ![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ae6f6a5f-d173-41c4-b3c1-1406aa1e81cf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221019%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221019T045807Z&X-Amz-Expires=86400&X-Amz-Signature=c67923aeebc971a1f812ea5bcd5fdb0a2b59898dde43f4f2f4dee4f55e49b640&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
@@ -53,6 +72,8 @@ JVM에서 호출 방식은 서블릿과 일반 클래스 모두 같으나, 서�
 3. 서블릿 컨테이너는 HTTP 요청 처리에 필요한 서블릿 인스턴스가 힙 메모리 영역에 있는지 확인한다. 존재하지 않는다면, 서블릿 인스턴스를 생성하고 해당 서블릿 인스턴스의 `init()` 메소드를 호출하여 서블릿 인스턴스를 초기화한다.
 4. 서블릿 컨테이너는 서블릿 인스턴스의 `service()` 메소드를 호출하여 HTTP 요청을 처리하고, WAS의 웹 서버에게 처리 결과를 전달한다.
 5. WAS의 웹 서버는 HTTP 응답을 앞 단에 위치한 웹 서버에게 전달하고, 앞 단의 웹 서버는 받은 HTTP 응답을 웹 브라우저에게 전달한다.
+
+
 
 ---
 
@@ -80,7 +101,7 @@ JSP와 JavaBeans만 사용하는 아키텍쳐
 
 ### **Model 2**
 
-Model 1의 단점을 보완하고자 나오게 되었고 일반적으로 알고 있는 MVC(Model View Controller) 아키텍처
+Model 1의 단점을 보완하고자 나오게 되었으며, 일반적으로 알고 있는 MVC(Model View Controller) 아키텍처이다.
 
 - 특징
     - Controller가 등장함
@@ -218,6 +239,10 @@ Request와 Handler 객체간의 매핑을 정의하고 있는 인터페이스�
 ---
 
 ## 출처
+
+- 서블릿에 대해
+    
+    [[JSP] 서블릿(Servlet)이란?](https://mangkyu.tistory.com/m/14)
 
 - 전반적인 SpringMVC 구조에 대한 이해
     
