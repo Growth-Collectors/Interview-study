@@ -9,9 +9,14 @@
 
 # HTTP의 구조
 
-![image](https://user-images.githubusercontent.com/69442847/196601857-3e63dc5e-ea3c-4932-96c4-8504d01af04f.png)
+<center>
+<img width ='500px' src = "https://user-images.githubusercontent.com/69442847/196601857-3e63dc5e-ea3c-4932-96c4-8504d01af04f.png">
 
-![image](https://user-images.githubusercontent.com/69442847/196601196-54dfd719-85b6-4ee8-a1fc-7ab2d90eb5f7.png)
+<br>
+
+<img width ='400px' src = "https://user-images.githubusercontent.com/69442847/196601196-54dfd719-85b6-4ee8-a1fc-7ab2d90eb5f7.png">
+</center>
+<br>
 <ul>
 
 **1** - Request Line (요청 라인) 또는 Start Line (상태라인) 
@@ -23,7 +28,7 @@
 **4** - Body (본문, 바디)
 
 </ul>
-
+<br>
 
 ---
 
@@ -75,15 +80,26 @@
 : 전송되는 컨텐츠에 대한 정보보다는 요청/응답이 이루어지는 날짜 및 시간등에 대한 일반적인 정보가 포함된다.
 
 - **Date**
-현재시간 (Sat, 23 Mat 2019 GMT)
+
+    현재시간 (Sat, 23 Mat 2019 GMT)
+
 - **Pragma**
-캐시제어 (no-cache), HTTP/1.0에서 쓰던 것으로 HTTP/1.1에서는 Cache-Control이 쓰인다.
+
+    캐시제어 (no-cache) : HTTP/1.0에서 쓰던 것으로 HTTP/1.1에서는 Cache-Control이 쓰인다.
 - **Cache-Control**
-캐시 제어+ no-cache : 모든 캐시를 쓰기 전에 서버에 해당 캐시를 사용해도 되는지 확인하겠다.+ public : 공유 캐시에 저장해도 된다.
-    - + max-age : 캐시의 유효시간을 명시하겠다.
-    - + private : '브라우저' 같은 특정 사용자 환경에만 저장하겠다.
-    - + must-revalidate : 만료된 캐시만 서버에 확인하겠다.
-    - + no-store : 캐시를 저장하지 않겠다.
+캐시 제어
+    
+    \+ no-cache : 모든 캐시를 쓰기 전에 서버에 해당 캐시를 사용해도 되는지 확인하겠다.
+    
+    \+ public : 공유 캐시에 저장해도 된다.
+    
+    \+ max-age : 캐시의 유효시간을 명시하겠다.
+    
+    \+ private : '브라우저' 같은 특정 사용자 환경에만 저장하겠다.
+    
+    \+ must-revalidate : 만료된 캐시만 서버에 확인하겠다.
+    
+    \+ no-store : 캐시를 저장하지 않겠다.
 - **Transfer-Encoding**
 body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 야금야금 브라우저가 해석해서 화면에 뿌려줄 때 이 기능을 사용한다.
 'chunked'면 본문의 내용이 동적으로 생성되어 길이를 모르기 때문에 나눠서 보낸다는 의미다.
