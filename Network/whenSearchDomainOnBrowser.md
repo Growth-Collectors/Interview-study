@@ -56,13 +56,13 @@ URL을 입력받은 브라우저는 일단 이 URL을 파싱합니다.
     이 응답을 받은 Local DNS는 [google.com](http://google.com/) 도메인을 관리하는 DNS 서버에 같은 내용을 요청합니다.
     5. [google.com](http://google.com/) DNS 서버에서 IP주소를 응답받은 Local DNS는 해당 IP주소를 캐싱하고 응답합니다.
 
-## 3. ****라우터를 통해 해당 서버의 게이트웨이까지 이동****
+## 3. 라우터를 통해 해당 서버의 게이트웨이까지 이동
 
 - IP 프로토콜을 이용해서 통신을 요청하면 라우터를 통해서 전송이 이루어집니다.
     - 라우터는 라우팅 테이블을 활용해서 통신 작업을 수행합니다.
     - 라우팅 프로토콜(알고리즘)을 바탕으로 생성된 라우팅 테이블을 활용해서 패킷의 전송을 효율적으로 수행합니다.
 
-## 4**. Server와 TCP Socket 열기**
+## 4. Server와 TCP Socket 열기
 
 - (HTTP 2.0 이하 기준)
 - 접속, 통신하고자 하는 Server의 IP주소로 TCP Socket을 열어 Server와 통신 준비를 진행합니다.
@@ -83,20 +83,26 @@ URL을 입력받은 브라우저는 일단 이 URL을 파싱합니다.
 > $ netstat
 
 <img width="600" src="https://nesoy.github.io/assets/posts/20180617/6.png">
-## 5**. HTTP(HTTPS) 프로토콜로 요청, 응답**
+
+## 5. HTTP(HTTPS) 프로토콜로 요청, 응답
 
 - TCP Socket을 통해 HTTP Protocol로 원하는 Resource를 요청합니다.
     - 서버에서 해당 요청을 받고, 이 요청을 수락할 수 있는지 검사합니다. 그리고 서버는 이 요청에 대한 응답을 생성하여 브라우저에게 전달합니다.
     - 세션이 유지되는 동안 서버에게 요청(Request)하고 응답(Response)을 받는 과정을 반복합니다.
 
-## 6**. Browser Page Rendering**
+## 6. Browser Page Rendering
 
 - Server에서 받은 Resource를 Browser에서 Rendering하는 작업이 필요합니다.
 
-### 참고 자료
+#### 참고 자료
 
 - [https://kimbangg.tistory.com/m/259](https://kimbangg.tistory.com/m/259)
 - [https://deveric.tistory.com/97](https://deveric.tistory.com/97)
 - [https://nesoy.github.io/articles/2018-06/What-happens-search-google](https://nesoy.github.io/articles/2018-06/What-happens-search-google)
 - [https://velog.io/@eesiwoo/www.google.com을-검색하면-어떤-일이-일어날까](https://velog.io/@eesiwoo/www.google.com%EC%9D%84-%EA%B2%80%EC%83%89%ED%95%98%EB%A9%B4-%EC%96%B4%EB%96%A4-%EC%9D%BC%EC%9D%B4-%EC%9D%BC%EC%96%B4%EB%82%A0%EA%B9%8C)
 - [https://oizys.tistory.com/36](https://oizys.tistory.com/36)
+
+
+- 태그: network
+- 날짜: 2022/10/17
+- 자료조사: Yerim, HanaH
