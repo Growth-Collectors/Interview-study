@@ -16,7 +16,7 @@ date|contents|assignee
 date|contents|assignee
 --|--|--
 2022.10.18|[AOP](Spring/AOP.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
-2022.10.19|[DI와 IoC](https://github.com/Growth-Collectors/Interview-study/blob/f2596c6e7a78c0b70d891194d69a68e6554f7fd1/Spring/DI%EC%99%80%20IoC.md)| [@jioome](https://github.com/jioome)
+2022.10.19|[DI와 IoC](https://github.com/Growth-Collectors/Interview-study/blob/5a31209fde8d9c949712afec0e7b2770976c4c48/Spring/DI%EC%99%80%20IoC.md)| [@jioome](https://github.com/jioome)
 
 ---
 
