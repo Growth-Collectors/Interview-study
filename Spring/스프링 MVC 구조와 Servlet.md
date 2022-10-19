@@ -1,4 +1,4 @@
-# 스프링 MVC 구조와 Survlet
+# 스프링 MVC 구조와 Servlet
 
 태그: spring
     
@@ -14,6 +14,7 @@
 - 예를 들어, 어떠한 사용자가 로그인을 하려고 할 때. 사용자는 아이디와 비밀번호를 입력하고, 로그인 버튼을 누릅니다. 
 그때 서버는 클라이언트의 아이디와 비밀번호를 확인하고, 다음 페이지를 띄워주어야 하는데, 이러한 역할을 수행하는 것이 바로 서블릿(Servlet)입니다. 그래서 서블릿은 자바로 구현 된 CGI라고 흔히 말합니다.
 
+- HTTP 프로토콜 서비스를 지원하는 javax.servlet.http.HttpServlet 클래스를 상속한다.
 
 ### **1. Servlet과 일반 자바 객체는 무슨 차이가 있는가?**
 
@@ -127,7 +128,7 @@ Model 1의 단점을 보완하고자 나오게 되었으며, 일반적으로
 
 ## 스프링 MVC의 구조
 
-기본 시스템 모듈이 MVC(Model-View-Controller)로 나눠져 있다.
+기본 시스템 모듈은 MVC(Model-View-Controller)로 나눠져 있다.
 
 - **Model** - '데이터' 디자인을 담당한다. (ex. 상품 목록, 주문 내역 등)
 - **View** - '실제로 렌더링되어 보이는 페이지' 를 담당한다. (ex. `.JSP` 파일들이 여기에 해당됨.)
@@ -138,7 +139,7 @@ Model 1의 단점을 보완하고자 나오게 되었으며, 일반적으로
 - **Model, View, Controller를 명확하게 분리하여 매우 유연하고 확장성이 좋다.**
 - **DispatcherServlet을 사용한다.**
     - DispatcherServlet (프론트 컨트롤러)
-        - Spring MVC의 핵심 요소 중 하나로서 **프론트 컨트롤러 패턴**을 구현한 Servlet이고 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성해준다.
+        - Spring MVC의 핵심 요소 중 하나로서 **프론트 컨트롤러 패턴**을 구현한 Servlet이다. 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성해준다.
         1. 작동원리
             1. 클라이언트로부터 요청이 들어오면 서블릿 컨테이너가 요청을 받는다.
             2. 이후 공통 작업을 DipatcherServlet에 처리하고 이외 작업은 적절한 세부 컨트롤러로 위임한다.
@@ -205,7 +206,7 @@ Request와 Handler 객체간의 매핑을 정의하고 있는 인터페이스�
 2. 웹 요청을 **Handler Mapping**에 위임하여 해당 요청을 처리할 Handler(Controller)를 탐색한다.
 3. 찾은 Handler를 실행할 수 있는 **HandlerAdapter**를 탐색한다.
 4. 찾은 Handler Adapter를 사용해서 Handler의 메소드를 실행한다.
-5. Handler의 반환 값은 Model과 View이다.
+5. Handler가 Model과 View를 반환한다.
 6. View 이름을 ViewResolver에게 전달하고, ViewResolver는 해당하는 View 객체를 전달한다.
 7. DispatcherServlet은 View에게 Model을 전달하고 화면 표시를 요청한다.
 이때, Model이 null이면 View를 그대로 사용하고, 그렇지 않으면 View에 Model 데이터를 렌더링한다.
@@ -217,6 +218,11 @@ Request와 Handler 객체간의 매핑을 정의하고 있는 인터페이스�
 ---
 
 추가로 알면 좋은 사항
+- CGI(Common Gateway Interface)란?
+    CGI는 특별한 라이브러리나 도구를 의미하는 것이 아니고, 별도로 제작된 웹서버와 프로그램간의 교환방식입니다. CGI방식은 어떠한 프로그래밍언어로도 구현이가능하며, 별도로 만들어 놓은 프로그램에 HTML의 Get or Post 방법으로 클라이언트의 데이터를 환경변수로 전달하고, 프로그램의 표준 출력 결과를 클라이언트에게 전송하는 것입니다.
+
+    즉, 자바 어플리케이션 코딩을 하듯 웹 브라우저용 출력 화면을 만드는 방법입니다.
+
 - ContextLoaderListener 개념 설명
         
     Spring MVC에서의 루트 애플리케이션 컨텍스트로서
