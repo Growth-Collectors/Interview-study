@@ -16,7 +16,7 @@ date|contents|assignee
 date|contents|assignee
 --|--|--
 2022.10.18|[AOP](Spring/AOP.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
-
+2022.10.19|[DI와 IoC](Spring/DI와 IoC.md)| [@jioome](https://github.com/jioome)
 
 ---
 
