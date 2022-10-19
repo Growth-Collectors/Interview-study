@@ -1,7 +1,5 @@
 # DI와 IoC
 
-태그: spring
-
 질문
 - 실제 스프링 사용하면서 DI로 인해 뭔가 이점을 본적이 있는지?
 
@@ -184,6 +182,7 @@ Container
 [DI와 IoC 관련 유투브 영상 추천](https://www.youtube.com/watch?v=8lp_nHicYd4)
 
 ----
+태그: spring
 
 날짜: 2022/10/13
 
