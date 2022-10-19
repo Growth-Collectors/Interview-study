@@ -24,7 +24,7 @@ date|contents|assignee
 
 date|contents|assignee
 --|--|--
-2022.10.18|[Http 헤더 구조](https://github.com/Growth-Collectors/Interview-study/blob/main/Network/Http%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%2C%20%ED%97%A4%EB%8D%94%EC%9D%98%20%EA%B5%AC%EC%A1%B0.md)| [@namnameeroo](https://github.com/namnameeroo)
+2022.10.19|[Http 헤더 구조](https://github.com/Growth-Collectors/Interview-study/blob/main/Network/Http%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%2C%20%ED%97%A4%EB%8D%94%EC%9D%98%20%EA%B5%AC%EC%A1%B0.md)| [@namnameeroo](https://github.com/namnameeroo)
 
 ---
 
