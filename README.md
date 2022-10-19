@@ -16,15 +16,15 @@ date|contents|assignee
 date|contents|assignee
 --|--|--
 2022.10.18|[AOP](Spring/AOP.md)| [@jioome](https://github.com/jioome), [@namnameeroo](https://github.com/namnameeroo)
-2022.10.19|[DI와 IoC](https://github.com/Growth-Collectors/Interview-study/blob/main/Spring/DI%EC%99%80%20IoC.md)| [@jioome](https://github.com/jioome)
-
+2022.10.19|[DI와 IoC](https://github.com/Growth-Collectors/Interview-study/blob/main/Spring/DI%EC%99%80%20IoC.md)|[@Yerimi11](https://github.com/Yerimi11), [@jioome](https://github.com/jioome)
+2022.10.19|[스프링 MVC구조와 Servlet](https://github.com/Growth-Collectors/Interview-study/blob/main/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20MVC%20%EA%B5%AC%EC%A1%B0%EC%99%80%20Survlet.md)|또로리, [@Yerimi11](https://github.com/Yerimi11)
 
 ### Network
 [질문 리스트 링크 바로가기](https://github.com/Growth-Collectors/Interview-study/blob/main/Network/%EC%A7%88%EB%AC%B8%20%EB%A6%AC%EC%8A%A4%ED%8A%B8.md)
 
 date|contents|assignee
 --|--|--
-2022.10.19|[Http 헤더 구조](https://github.com/Growth-Collectors/Interview-study/blob/main/Network/Http%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%2C%20%ED%97%A4%EB%8D%94%EC%9D%98%20%EA%B5%AC%EC%A1%B0.md)| [@namnameeroo](https://github.com/namnameeroo)
+2022.10.19|[Http 헤더 구조](https://github.com/Growth-Collectors/Interview-study/blob/main/Network/Http%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%2C%20%ED%97%A4%EB%8D%94%EC%9D%98%20%EA%B5%AC%EC%A1%B0.md)|또로리,[@namnameeroo](https://github.com/namnameeroo)
 
 ---
 
