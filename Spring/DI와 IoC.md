@@ -62,7 +62,7 @@
     연락하지마라 알아서 불러줄게 Don’t call us, we’ll call you
     
 
-### **DIP: 의존 역전 원칙 Dependency Inversion Principle**
+### **DIP: 의존 역전 원칙 Dependency Inversion Principle** (OOP - SOLID 원칙 중 하나)
 
 - **상위 레벨의 모듈은 절대 하위 레벨 모듈에 의존하지 않는다.**
 - (상위, 하위레벨 모듈) 둘 다 **추상화에 의존**해야 한다.
