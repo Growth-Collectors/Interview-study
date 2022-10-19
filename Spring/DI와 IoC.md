@@ -2,7 +2,6 @@
 
 태그: spring
 
-----
 
 - 실제 스프링 사용하면서 DI로 인해 뭔가 이점을 본적이 있는지?
 
@@ -22,7 +21,7 @@
 
 ![https://velog.velcdn.com/images%2Fgillog%2Fpost%2F41f2eb24-fce2-4b7e-b9ac-d5c3ce97d213%2F22535642580C4AF12C.jpg](https://velog.velcdn.com/images%2Fgillog%2Fpost%2F41f2eb24-fce2-4b7e-b9ac-d5c3ce97d213%2F22535642580C4AF12C.jpg)
 
-**스프링에서는 객체를 `Bean`**이라고 부르며, 프로젝트가 실행될때 사용자가 Bean으로 관리하는 객체들의 생성과 소멸에 관련된 작업을 자동적으로 수행해주는데 객체가 생성되는 곳을 스프링에서는 **Bean 컨테이너라**고 부른다.
+**스프링에서는 객체를** `Bean`이라고 부르며, 프로젝트가 실행될때 사용자가 Bean으로 관리하는 객체들의 생성과 소멸에 관련된 작업을 자동적으로 수행해주는데 객체가 생성되는 곳을 스프링에서는 **Bean 컨테이너라**고 부른다.
 
 [[Spring] DI, IoC 정리](https://velog.io/@gillog/Spring-DIDependency-Injection)
 
@@ -56,9 +55,7 @@
 
 ---
 
-DI와 IoC 관련 유투브 영상 추천
-
-[https://www.youtube.com/watch?v=8lp_nHicYd4](https://www.youtube.com/watch?v=8lp_nHicYd4)
+[DI와 IoC 관련 유투브 영상 추천](https://www.youtube.com/watch?v=8lp_nHicYd4)
 
 ### **IOC 왜 필요?**
 
@@ -99,9 +96,11 @@ DI와 IoC 관련 유투브 영상 추천
     - 상위계층이 하위계층에 의존하는 상황을 Interface를 이용해 반전시켜 하위계층의 구현으로부터 독립시킨다
     
 
-![Untitled](DI%E1%84%8B%E1%85%AA%20IoC%2065e4da0bf76e468b9512fb2ba932d181/Untitled.png)
+![444](https://user-images.githubusercontent.com/64303211/196603635-784d66ea-c54d-4c1a-9526-f0a770a38a2c.png)
 
-![Untitled](DI%E1%84%8B%E1%85%AA%20IoC%2065e4da0bf76e468b9512fb2ba932d181/Untitled%201.png)
+![22222](https://user-images.githubusercontent.com/64303211/196603671-e187cd5b-0a54-426e-919f-f388b1729c77.png)
+
+
 
 ### **Spring DI - 자동 주입**
 
@@ -175,14 +174,17 @@ Container
 
 객체를 관리하는 컨테이너, 컨테이너에서 객체를 담아 두고, 필요할 때 컨테이너로부터 객체를 가져와 사용할 수 있음
 
-**의존성을 주입하는 방식 →** @Autowired, @Resource, property 
-비교 링크([https://lkhlkh23.tistory.com/72](https://lkhlkh23.tistory.com/72))
+[출처]
+
+
+([의존성을 주입하는 방식 @Autowired, @Resource, property 
+비교](https://lkhlkh23.tistory.com/72))
 
 [[면접준비] IOC / DI](https://lkhlkh23.tistory.com/124?category=833712)
 
 [[Spring] 생성자 주입 vs 필드 주입 vs 수정자 주입](https://yeonyeon.tistory.com/m/220)
-
-
+[[Spring] DI, IoC 정리](https://velog.io/@gillog/Spring-DIDependency-Injection)
+[DI와 IoC 관련 유투브 영상 추천](https://www.youtube.com/watch?v=8lp_nHicYd4)
 ----
 
 날짜: 2022/10/13
