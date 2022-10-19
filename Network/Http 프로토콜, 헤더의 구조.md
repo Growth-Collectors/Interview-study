@@ -1,12 +1,5 @@
 # http 프로토콜, 헤더의 구조
 
-날짜: 2022/10/05
-상태: Done
-자료조사: 또로리, namnameeroo
-태그: network
-
-
-
 # HTTP의 구조
 
 <center>
@@ -15,6 +8,7 @@
 <br>
 
 <img width ='400px' src = "https://user-images.githubusercontent.com/69442847/196601196-54dfd719-85b6-4ee8-a1fc-7ab2d90eb5f7.png">
+
 </center>
 <br>
 <ul>
@@ -53,6 +47,8 @@
     - 500: 서버 내부 오류
 - **이유 문구 :** 사람이 이해할 수 있는 짧은 상태 코드 설명 글
 
+<br>
+
 ---
 
 # 2. HTTP의 Header
@@ -68,6 +64,7 @@
 - 표현 데이터를 해석할 수 있는 정보(부가정보) 제공
 (그 프로토콜에 불필요한 내용을 담으면 네트워크로 전송되는 데이터의 크기가 커져서 빠른 전송이 불가능하기 때문에 프로토콜을 설계할 때부터 꼭 필요한 내용만 담아야 하고 모든 기능이 표현되어야 한다.)
 
+<br>
 
 ## 2 - 1. HTTP Header의 구조
 
@@ -130,11 +127,14 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
 
 ### 2 - 1 - 2. Request/Response Header
 
-- 요청 메시지 헤더 : `Host:www.google.com`
+- 요청 메시지 헤더 : 
+
+    **`Host:www.google.com`**
+
 - 응답 메시지 헤더 :
     
-    `Content-type: text/html;charset=UTF-8`  
-    `Content-Length: 3423`
+    **`Content-type: text/html;charset=UTF-8`** <br>
+    **`Content-Length: 3423`**
     
 
     ![image](https://user-images.githubusercontent.com/69442847/196601279-7e9bf6c8-f9c5-4ad9-84f0-691da22177ec.png)
@@ -210,11 +210,10 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
 
 ### 2 - 1 - 2 - b. **Response Header**
 
-웹서버가 웹브라우저에 응답하는 콘텐츠가 들어가있는 메시지
+: 웹 서버가 웹브라우저에 응답하는 콘텐츠가 들어가있는 메시지
 
 - response header form
 웹브라우저가 요청한 메시지에 대한 status, 메세지, 요청한 응답 값들이 body에 담겨있다.
-    <사진!!>
     
     - HTTP Version
     - status code(상태코드)
@@ -228,19 +227,27 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
         클라이언트 에러
         - 500 - 505
         서버에러
+
     - **Location**
-    301, 302 상태코드일 떄만 볼 수 있는 헤더.
-    서버의 응답이 다른 곳에 있다고 알려주면서 해당 위치(URI)를 지정한다.
+
+        301, 302 상태코드일 때만 볼 수 있는 헤더, <br> 서버의 응답이 다른 곳에 있다고 알려주면서 해당 위치(URI)를 지정한다.
     - **Server**
     웹서버의 종류 ex) nginx
     - **Age**
-    max-age 시간내에서 얼마나 흘렀는지 초 단위로 알려주는 값
+
+        max-age 시간내에서 얼마나 흘렀는지 초 단위로 알려주는 값
+
     - **Referrer-policy**
-    서버 referrer 정책을 알려주는 값 ex) origin, no-referrer, unsafe-url
+
+        서버 referrer 정책을 알려주는 값 ex) origin, no-referrer, unsafe-url
+
     - **WWW-Authenticate**
-    사용자 인증이 필요한 자원을 요구할 시, 서버가 제공하는 인증 방식
+    
+        사용자 인증이 필요한 자원을 요구할 시, 서버가 제공하는 인증 방식
+
     - **Proxy-Authenticate**
-    요청한 서버가 프록시 서버인 경우 유저 인증을 위한 값
+    
+        요청한 서버가 프록시 서버인 경우 유저 인증을 위한 값
 
 ### 2 - 1 - 3. Entity header
 
@@ -252,12 +259,25 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
 
 - 메시지 본문(message body)을 통해 표현 데이터를 전달한다.
 
----
+<br>
 
-## 참고
+
+---
+### 참고
 
 [https://velog.io/@jch9537/WEB-HTTP](https://velog.io/@jch9537/WEB-HTTP)
 
 [https://hazel-developer.tistory.com/145](https://hazel-developer.tistory.com/145)
 
 [https://velog.io/@wngud4950/HTTP와-HTTP-Header](https://velog.io/@wngud4950/HTTP%EC%99%80-HTTP-Header)
+
+[https://velog.io/@gparkkii/HTTPMessage](https://velog.io/@gparkkii/HTTPMessage)
+
+<br>
+
+<sub>
+날짜: 2022/10/05<br>
+상태: Done<br>
+자료조사: 또로리, namnameeroo<br>
+태그: network
+</sub>
