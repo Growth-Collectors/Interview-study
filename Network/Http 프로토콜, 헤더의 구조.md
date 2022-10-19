@@ -5,15 +5,6 @@
 자료조사: 또로리, namnameeroo
 태그: network
 
-![image](https://user-images.githubusercontent.com/69442847/196601246-c2ea5e9d-66b6-4330-880c-c432b4652dfc.png)
-
-![image](https://user-images.githubusercontent.com/69442847/196601279-7e9bf6c8-f9c5-4ad9-84f0-691da22177ec.png)
-
-![image](https://user-images.githubusercontent.com/69442847/196601301-53d4ead5-9377-46b9-a23c-b6b5b3074aad.png)
-
-
-![image](https://user-images.githubusercontent.com/69442847/196601214-c79f3cae-9ded-4a00-9bcd-f9db5c437308.png)
-
 
 
 # HTTP의 구조
@@ -21,16 +12,18 @@
 ![image](https://user-images.githubusercontent.com/69442847/196601857-3e63dc5e-ea3c-4932-96c4-8504d01af04f.png)
 
 ![image](https://user-images.githubusercontent.com/69442847/196601196-54dfd719-85b6-4ee8-a1fc-7ab2d90eb5f7.png)
+<ul>
 
-1 - Request Line (요청 라인) 또는 Start Line (상태라인) 
+**1** - Request Line (요청 라인) 또는 Start Line (상태라인) 
 
-2 - Header (헤더)
+**2** - Header (헤더) : **general header** | **request header** or **response header** | **entity header**
 
-general header | request header or response header | entity header
+**3** - Blank Line (공백)
 
-3 - Blank Line (공백)
+**4** - Body (본문, 바디)
 
-4 - Body (본문, 바디)
+</ul>
+
 
 ---
 
@@ -59,15 +52,17 @@ general header | request header or response header | entity header
 
 # 2. HTTP의 Header
 
-![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%202.png)
+![image](https://user-images.githubusercontent.com/69442847/196601214-c79f3cae-9ded-4a00-9bcd-f9db5c437308.png)
 
-![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%203.png)
+![image](https://user-images.githubusercontent.com/69442847/196601246-c2ea5e9d-66b6-4330-880c-c432b4652dfc.png)
+
 
 ## 2 - 0. Header
 
 - HTTP메시지(요청/응답)와 본문에 대한 정보로, 해당 메시지가 제공하는 기능에 대한 최소한의 정보
 - 표현 데이터를 해석할 수 있는 정보(부가정보) 제공
 (그 프로토콜에 불필요한 내용을 담으면 네트워크로 전송되는 데이터의 크기가 커져서 빠른 전송이 불가능하기 때문에 프로토콜을 설계할 때부터 꼭 필요한 내용만 담아야 하고 모든 기능이 표현되어야 한다.)
+
 
 ## 2 - 1. HTTP Header의 구조
 
@@ -126,9 +121,12 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
     `Content-Length: 3423`
     
 
-![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%204.png)
+    ![image](https://user-images.githubusercontent.com/69442847/196601279-7e9bf6c8-f9c5-4ad9-84f0-691da22177ec.png)
 
-![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%205.png)
+    ![image](https://user-images.githubusercontent.com/69442847/196601301-53d4ead5-9377-46b9-a23c-b6b5b3074aad.png)
+
+
+
 
 ### 2 - 1 - 2 - a. **Request Header**
 
@@ -136,9 +134,6 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
 
 - **request header form**
     
-    ![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%206.png)
-    
-    ![Untitled](http%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF,%20%E1%84%92%E1%85%A6%E1%84%83%E1%85%A5%E1%84%8B%E1%85%B4%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%20e0e3d4bfed484c7dbcb01df165ec29f4/Untitled%207.png)
     
     - **Request Line**
     어떤 웹서버로 접속(Host 부분)해서 어떠한 방식(HTTP/1.1)으로, 어떠한 메소드(GET)를 통해 무엇을(/doc/test/.html) 요청했는지에 대한 메시지가 담겨있다.
@@ -237,13 +232,13 @@ body 내용 자체 압축 방식 지정본문에 데이터 길이가 나와서 �
 
 # HTTP의 본문 - 페이로드(payload)
 
-요청이나 응답에서 전달할 실제 데이터
+: 요청이나 응답에서 전달할 실제 데이터
 
 - 메시지 본문(message body)을 통해 표현 데이터를 전달한다.
 
 ---
 
-참고
+## 참고
 
 [https://velog.io/@jch9537/WEB-HTTP](https://velog.io/@jch9537/WEB-HTTP)
 
