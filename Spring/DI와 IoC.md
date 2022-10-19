@@ -171,8 +171,8 @@ Container
 [출처]
 
 
-([의존성을 주입하는 방식 @Autowired, @Resource, property 
-비교](https://lkhlkh23.tistory.com/72))
+[의존성을 주입하는 방식 @Autowired, @Resource, property 
+비교](https://lkhlkh23.tistory.com/72
 
 [[면접준비] IOC / DI](https://lkhlkh23.tistory.com/124?category=833712)
 
