@@ -22,8 +22,8 @@ JVM은 **Java Virtual Machine**의 약자로, 자바 가상 머신이라고 부�
 ## 자바 가상 머신(JVM)의 동작 방식
 
 <img width="600" src="https://blog.kakaocdn.net/dn/cQRqku/btru0vJ6Ixx/9qCTW7ChXc80fGfQUrT4B0/img.png">
+<img width="600" src="https://user-images.githubusercontent.com/62924471/197547921-f3fcae65-77f7-46cc-b790-4d6b1c8ede77.png">
 
-<img width="600" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a4a4eb16-1fe4-4762-ba50-d5e6250306a2/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053939Z&X-Amz-Expires=86400&X-Amz-Signature=e2e2a7819ca527f01433318f6ac2e345aa892c42586190963b2e4907289b258d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
 
 **1.** 자바로 개발된 프로그램을 실행하면 **JVM은 OS로부터 메모리를 할당**합니다.
 
@@ -79,7 +79,8 @@ JIT는 바이트 코드를 어셈블러 같은 네이티브 코드로 바꿈으�
 
 - **JVM의 메모리 영역**으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역입니다. 
 - 이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack로 나눌 수 있습니다.
-<img width="600" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c56b9800-97d9-49a9-87da-755c1dda522b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221018T053757Z&X-Amz-Expires=86400&X-Amz-Signature=ac6006ae732544065e8dc0fc9f831b2e31add9f662ded080d1e0a03258a24eca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject">
+
+<img width="600" src="https://user-images.githubusercontent.com/62924471/197548269-241e74a3-05de-4a7c-a57c-e11b92fe0438.png">
 <img width="600" src="https://blog.kakaocdn.net/dn/bZR97z/btrvtdBl1Md/LbUk2NVlgDmsKMcBiQ9f4K/img.png">
 - **런타임 데이터 영역은 JVM이 운영체제로부터 할당받은 메모리 영역**으로, **자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역**입니다.
 
